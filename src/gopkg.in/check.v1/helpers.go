@@ -11,6 +11,14 @@ func (c *C) TestName() string {
 	return c.testName
 }
 
+var (
+	skip int = 2
+)
+
+func (c *C) SetSkipLevel(n int) {
+  skip = n
+}
+
 // -----------------------------------------------------------------------
 // Basic succeeding/failing logic.
 
@@ -177,7 +185,7 @@ func (c *C) Assert(obtained interface{}, checker Checker, args ...interface{}) {
 
 func (c *C) internalCheck(funcName string, obtained interface{}, checker Checker, args ...interface{}) bool {
 	if checker == nil {
-		c.logCaller(2)
+		c.logCaller(skip)
 		c.logString(fmt.Sprintf("%s(obtained, nil!?, ...):", funcName))
 		c.logString("Oops.. you've provided a nil checker!")
 		c.logNewLine()
@@ -199,7 +207,7 @@ func (c *C) internalCheck(funcName string, obtained interface{}, checker Checker
 
 	if len(params) != len(info.Params) {
 		names := append([]string{info.Params[0], info.Name}, info.Params[1:]...)
-		c.logCaller(2)
+		c.logCaller(skip)
 		c.logString(fmt.Sprintf("%s(%s):", funcName, strings.Join(names, ", ")))
 		c.logString(fmt.Sprintf("Wrong number of parameters for %s: want %d, got %d", info.Name, len(names), len(params)+1))
 		c.logNewLine()
@@ -213,7 +221,7 @@ func (c *C) internalCheck(funcName string, obtained interface{}, checker Checker
 	// Do the actual check.
 	result, error := checker.Check(params, names)
 	if !result || error != "" {
-		c.logCaller(2)
+		c.logCaller(skip)
 		for i := 0; i != len(params); i++ {
 			c.logValue(names[i], params[i])
 		}
