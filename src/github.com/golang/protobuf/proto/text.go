@@ -40,7 +40,6 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"log"
 	"math"
 	"reflect"
 	"sort"
@@ -154,7 +153,7 @@ func (w *textWriter) indent() { w.ind++ }
 
 func (w *textWriter) unindent() {
 	if w.ind == 0 {
-		log.Print("proto: textWriter unindented too far")
+		// log.Print("proto: textWriter unindented too far")
 		return
 	}
 	w.ind--
