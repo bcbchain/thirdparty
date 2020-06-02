@@ -60,3 +60,5 @@ require (
 	mvdan.cc/unparam v0.0.0-20190124213536-fbb59629db34
 	sourcegraph.com/sourcegraph/go-diff v0.5.1-0.20190210232911-dee78e514455
 )
+
+go 1.13
