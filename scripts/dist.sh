@@ -11,6 +11,8 @@ if [ -z "$VERSION" ];then
   exit 1
 fi
 
+VERSION="v$VERSION"
+
 project_path=$(pwd)
 project_name="${project_path##*/}"
 echo "==> Building $project_name $VERSION..."
