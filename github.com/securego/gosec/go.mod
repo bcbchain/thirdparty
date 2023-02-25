@@ -12,11 +12,8 @@ require (
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/ryanuber/go-glob v0.0.0-20170128012129-256dc444b735
 	github.com/stretchr/testify v1.2.2 // indirect
-	golang.org/x/net v0.0.0-20170915142106-8351a756f30f // indirect
-	golang.org/x/sync v0.0.0-20180314180146-1d60e4601c6f // indirect
-	golang.org/x/sys v0.0.0-20171026204733-164713f0dfce // indirect
-	golang.org/x/text v0.0.0-20170915090833-1cbadb444a80 // indirect
-	golang.org/x/tools v0.0.0-20170915040203-e531a2a1c15f
+	golang.org/x/text v0.3.8 // indirect
+	golang.org/x/tools v0.1.12
 	gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127 // indirect
 	gopkg.in/yaml.v2 v2.0.0-20170812160011-eb3733d160e7
 )
